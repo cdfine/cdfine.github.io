@@ -37,5 +37,195 @@ title: Carli Fine | Let's Chat!
   </p>
 
   <h2>Testimonials</h2>
-  <p><i>"I’ve been fortunate to have received guidance from Carli for several years. Carli takes an “above and beyond” approach to all facets of her work and is, without a doubt, one of the most hardworking and intelligent researchers I’ve ever met. Apart from being an excellent scientist, she has deep knowledge about navigating careers in research, from graduate school admissions to paths within and outside academia. Carli is deeply passionate about supporting young scientists: she has worked with several organizations to break down barriers to academic careers and is very involved in the broader community. She approaches career decisions with thoughtfulness, emotional intelligence, compassion, and a wealth of insights and relevant resources. I would highly recommend her to anyone seeking career guidance, whether you’re applying to programs or positioning yourself for a new role."</i>-I.F. (mentee)</p>
+  
+<style>
+  .carousel-wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .testimonials {
+    display: flex;
+    gap: 16px;
+    overflow-x: hidden;          
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;              /* default: full width (mobile) */
+    max-width: 300px;            /* cap width on bigger screens */
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    scroll-snap-align: start;
+  }
+
+  .testimonial-card::before {
+    content: "“";
+    font-size: 32px;
+    color: #ccc;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-author {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+    text-align: right;
+  }
+
+  /* Arrows overlay */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    user-select: none;
+    transition: background 0.3s;
+  }
+  .arrow:hover {
+    background: rgba(255,255,255,1);
+  }
+  .arrow.left { left: 5px; }
+  .arrow.right { right: 5px; }
+
+  /* Dots */
+  .indicator {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: #555;
+  }
+</style>
+
+<h2>Testimonials</h2>
+<div class="carousel-wrapper">
+  <button class="arrow left" id="prevBtn">‹</button>
+  <button class="arrow right" id="nextBtn">›</button>
+
+  <div class="testimonials" id="testimonialContainer">
+    <div class="testimonial-card">
+      I’ve been fortunate to have received guidance from Carli for several years. 
+      Carli takes an “above and beyond” approach to all facets of her work and is, without a doubt, 
+      one of the most hardworking and intelligent researchers I’ve ever met. 
+      Apart from being an excellent scientist, she has deep knowledge about navigating careers in research, 
+      from graduate school admissions to paths within and outside academia. Carli is deeply passionate about 
+      supporting young scientists: she has worked with several organizations to break down barriers to academic 
+      careers and is very involved in the broader community. She approaches career decisions with thoughtfulness, 
+      emotional intelligence, compassion, and a wealth of insights and relevant resources. I would highly recommend 
+      her to anyone seeking career guidance, whether you’re applying to programs or positioning yourself for a new role.
+      <span class="testimonial-author">— I.F. (research mentee)</span>
+    </div>
+
+    <div class="testimonial-card">
+      Carli was extremely helpful, especially with my statement. Not only was she a wealth of knowledge in her own right, 
+      she provided me with so many resources that were beneficial in being able to see how I should structure my statement, 
+      what to include, and what to leave out. Beyond this though, Carli met with me regularly (and allowed me to record our 
+      conversations so I could utilize them at a later date) to discuss the paper and edit it to its best version. Most importantly, 
+      I think Carli is a very kind person who wanted me to succeed and was excited for me when I did.
+      <span class="testimonial-author">— H.M. (graduate school applicant & client)</span>
+    </div>
+
+    <div class="testimonial-card">
+      I cannot recommend Carli enough as a mentor figure! She has a thorough understanding of how to navigate larger systems 
+      of academia and professional life that can feel like a secret language to many. Carli will walk you through exactly how 
+      to reach your goals with an encouraging and passionate attitude! She has personally supported me through successful 
+      graduate school applications and career transitions, all with a systems-level and neurodivergent-friendly lens. If you 
+      need support from someone with the knowledge, skills, and tools to help you succeed who will also genuinely lift you up 
+      as a person, Carli is the coach for you!
+      <span class="testimonial-author">— H.T. (mentee)</span>
+    </div>
+  </div>
+</div>
+
+<div class="indicator" id="indicator"></div>
+
+<script>
+  const container = document.getElementById('testimonialContainer');
+  const cards = Array.from(container.children);
+  const indicator = document.getElementById('indicator');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index = 0;
+  let autoplay;
+
+  // Create dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      restartAutoplay();
+    });
+    indicator.appendChild(dot);
+  });
+  const dots = indicator.querySelectorAll('.dot');
+
+  function updateDots(i) {
+    dots.forEach((dot, d) => dot.classList.toggle('active', d === i));
+  }
+
+  function goToSlide(i) {
+    index = (i + cards.length) % cards.length; // wrap around
+    container.scrollTo({
+      left: cards[index].offsetLeft,
+      behavior: 'smooth'
+    });
+    updateDots(index);
+  }
+
+  function startAutoplay() {
+    autoplay = setInterval(() => goToSlide(index + 1), 6000);
+  }
+
+  function restartAutoplay() {
+    clearInterval(autoplay);
+    startAutoplay();
+  }
+
+  // Buttons
+  prevBtn.addEventListener('click', () => {
+    goToSlide(index - 1);
+    restartAutoplay();
+  });
+  nextBtn.addEventListener('click', () => {
+    goToSlide(index + 1);
+    restartAutoplay();
+  });
+
+  // Init autoplay
+  startAutoplay();
+</script>
+
+  
 </div><!-- /.blurb -->
