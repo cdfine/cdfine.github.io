@@ -174,7 +174,6 @@ title: Carli Fine | Let's Chat!
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   let index = 0;
-  let autoplay;
 
   // Create dots
   cards.forEach((_, i) => {
@@ -183,7 +182,6 @@ title: Carli Fine | Let's Chat!
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', () => {
       goToSlide(i);
-      restartAutoplay();
     });
     indicator.appendChild(dot);
   });
@@ -202,27 +200,14 @@ title: Carli Fine | Let's Chat!
     updateDots(index);
   }
 
-  function startAutoplay() {
-    autoplay = setInterval(() => goToSlide(index + 1), 6000);
-  }
-
-  function restartAutoplay() {
-    clearInterval(autoplay);
-    startAutoplay();
-  }
-
   // Buttons
   prevBtn.addEventListener('click', () => {
     goToSlide(index - 1);
-    restartAutoplay();
   });
   nextBtn.addEventListener('click', () => {
     goToSlide(index + 1);
-    restartAutoplay();
   });
 
-  // Init autoplay
-  startAutoplay();
 </script>
 
   
