@@ -1,0 +1,37 @@
+{
+  "app": {
+    "name": "Carli Fine"
+  },
+  "landing": {
+    "title": "This is a website template",
+    "description": "A simple starting point for spinning up a new website. Clone it and start building."
+  },
+  "notFound": {
+    "title": "404 - Not Found",
+    "description": "This page does not exist.",
+    "homeLink": "Go home"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "en-US": "English (US)",
+    "en-GB": "English (UK)"
+  },
+  "themeSwitcher": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "spinner": {
+    "label": "Loading"
+  },
+  "navbar": {
+    "ariaLabel": "Main",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "designer": "Designed by <website>{{name}}</website>",
+    "copyright": "© {{year}} {{appName}}. All rights reserved."
+  }
+}

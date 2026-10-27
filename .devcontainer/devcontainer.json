@@ -1,0 +1,40 @@
+{
+  "name": "Carli's Website",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:5-26-trixie",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4.1.3": {
+      "moby": false
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+
+  // Vite dev server (5173) and Storybook (6006) default ports. Published by
+  // Docker instead of forwarded by VS Code, which drops WebSockets (HMR)
+  "appPort": ["127.0.0.1:5173:5173", "127.0.0.1:6006:6006"],
+  "portsAttributes": {
+    "5173": { "label": "Vite", "onAutoForward": "ignore" },
+    "6006": { "label": "Storybook", "onAutoForward": "ignore" }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+        "editor.formatOnSave": true,
+        "files.eol": "\r\n",
+        "workbench.browser.openLocalhostLinks": false
+      }
+    }
+  },
+
+  // Install dependencies once a package.json exists
+  "postCreateCommand": "if [ -f package.json ]; then npm install; fi"
+}
