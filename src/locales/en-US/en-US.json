@@ -65,6 +65,10 @@
   },
   "footer": {
     "designer": "Designed by <website>{{name}}</website>",
-    "copyright": "© {{year}} {{appName}}. All rights reserved."
+    "copyright": "© {{year}} {{appName}}. All rights reserved.",
+    "socialLinks": {
+      "ariaLabel": "Social links",
+      "email": "Email"
+    }
   }
 }

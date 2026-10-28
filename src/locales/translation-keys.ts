@@ -56,4 +56,6 @@ export const TranslationKeys = {
 
   FooterDesigner: 'footer.designer',
   FooterCopyright: 'footer.copyright',
+  FooterSocialLinksAriaLabel: 'footer.socialLinks.ariaLabel',
+  FooterSocialLinksEmail: 'footer.socialLinks.email',
 } as const satisfies Record<string, ParseKeys>
