@@ -13,7 +13,7 @@ export const MainLayout = ({
   return (
     <div className="flex min-h-dvh flex-col">
       {header}
-      <main className="flex flex-1 flex-col">{children}</main>
+      <main className="flex flex-1 flex-col p-5">{children}</main>
       {footer}
     </div>
   )

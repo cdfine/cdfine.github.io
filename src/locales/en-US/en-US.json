@@ -6,6 +6,26 @@
     "title": "This is a website template",
     "description": "A simple starting point for spinning up a new website. Clone it and start building."
   },
+  "research": {
+    "title": "Research",
+    "description": "Coming soon."
+  },
+  "teaching": {
+    "title": "Teaching & Mentoring",
+    "description": "Coming soon."
+  },
+  "dei": {
+    "title": "DEI Work",
+    "description": "Coming soon."
+  },
+  "coaching": {
+    "title": "Coaching",
+    "description": "Coming soon."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Coming soon."
+  },
   "notFound": {
     "title": "404 - Not Found",
     "description": "This page does not exist.",
@@ -31,7 +51,12 @@
   "navbar": {
     "ariaLabel": "Main",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "research": "Research",
+    "teaching": "Teaching & Mentoring",
+    "dei": "DEI Work",
+    "coaching": "Coaching",
+    "blog": "Blog"
   },
   "footer": {
     "designer": "Designed by <website>{{name}}</website>",

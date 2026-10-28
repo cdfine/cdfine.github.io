@@ -7,6 +7,21 @@ export const TranslationKeys = {
   LandingTitle: 'landing.title',
   LandingDescription: 'landing.description',
 
+  ResearchTitle: 'research.title',
+  ResearchDescription: 'research.description',
+
+  TeachingTitle: 'teaching.title',
+  TeachingDescription: 'teaching.description',
+
+  DeiTitle: 'dei.title',
+  DeiDescription: 'dei.description',
+
+  CoachingTitle: 'coaching.title',
+  CoachingDescription: 'coaching.description',
+
+  BlogTitle: 'blog.title',
+  BlogDescription: 'blog.description',
+
   NotFoundTitle: 'notFound.title',
   NotFoundDescription: 'notFound.description',
   NotFoundHomeLink: 'notFound.homeLink',
@@ -28,6 +43,11 @@ export const TranslationKeys = {
   NavbarAriaLabel: 'navbar.ariaLabel',
   NavbarOpenMenu: 'navbar.openMenu',
   NavbarCloseMenu: 'navbar.closeMenu',
+  NavbarResearch: 'navbar.research',
+  NavbarTeaching: 'navbar.teaching',
+  NavbarDei: 'navbar.dei',
+  NavbarCoaching: 'navbar.coaching',
+  NavbarBlog: 'navbar.blog',
 
   FooterDesigner: 'footer.designer',
   FooterCopyright: 'footer.copyright',

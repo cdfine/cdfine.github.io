@@ -38,7 +38,7 @@ export const MobileMenu = ({
 
       <div
         id={menuId}
-        className={`${isOpen ? 'flex' : 'hidden'} w-full flex-col items-center gap-4 md:flex md:w-auto md:flex-row md:gap-6`}
+        className={`${isOpen ? 'flex' : 'hidden'} w-full flex-col items-center gap-4 md:flex md:w-auto md:flex-1 md:flex-row md:gap-6`}
       >
         {children}
       </div>

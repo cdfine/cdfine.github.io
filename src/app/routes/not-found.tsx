@@ -16,7 +16,7 @@ export const NotFoundRoute = () => {
         {t(TranslationKeys.NotFoundDescription)}
       </p>
       <Link
-        to={paths.home.getHref()}
+        to={paths.landing.getHref()}
         className="text-primary hover:text-primary/80"
       >
         {t(TranslationKeys.NotFoundHomeLink)}
