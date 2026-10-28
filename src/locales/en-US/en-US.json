@@ -3,8 +3,13 @@
     "name": "Carli Fine"
   },
   "landing": {
-    "title": "This is a website template",
-    "description": "A simple starting point for spinning up a new website. Clone it and start building."
+    "title": "Hi there, I'm Carli!",
+    "photoAlt": "Headshot of Carli Fine",
+    "origin": "I decided upon a career in brain sciences during middle school, while reading a novel about a girl with a rare neurological condition. Years later, inspired by a fictional story about a girl who wanted answers about her life, I aspire to answer real questions for real individuals about the brain and behavior.",
+    "doctorate": "Currently, I am a doctoral student with <jamieWard>Dr. Jamie Ward</jamieWard> at the University of Sussex with the <synaesthesiaGroup>Synaesthesia Research Group</synaesthesiaGroup>. I am investigating perceptual neurodiversity through a neurocognitive profile of synesthesia, using magnetic resonance neuroimaging (MRI) and behavioral methods.",
+    "masters": "I earned a Master of Science in Cognitive Psychology working with <jaredMedina>Dr. Jared Medina</jaredMedina> at the University of Delaware. We worked on projects related to multisensory perception, illusory qualia, and cognitive neuropsychology using techniques including the Mirror Box Illusion.",
+    "labManager": "Before starting graduate school, I worked as a lab manager with <davidBrang>Dr. David Brang</davidBrang> at the University of Michigan where we studied multisensory perception, integration illusions, and synesthesia using cognitive neuroscience techniques including electrocorticography (ECoG) recordings.",
+    "hobbies": "When I'm not in lab, I'm probably exploring cafes or working on craft projects!"
   },
   "research": {
     "title": "Research",

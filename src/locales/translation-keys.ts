@@ -5,7 +5,12 @@ export const TranslationKeys = {
   AppName: 'app.name',
 
   LandingTitle: 'landing.title',
-  LandingDescription: 'landing.description',
+  LandingPhotoAlt: 'landing.photoAlt',
+  LandingOrigin: 'landing.origin',
+  LandingDoctorate: 'landing.doctorate',
+  LandingMasters: 'landing.masters',
+  LandingLabManager: 'landing.labManager',
+  LandingHobbies: 'landing.hobbies',
 
   ResearchTitle: 'research.title',
   ResearchDescription: 'research.description',
