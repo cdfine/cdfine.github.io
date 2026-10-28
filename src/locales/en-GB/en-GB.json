@@ -18,9 +18,12 @@
   },
   "themeSwitcher": {
     "label": "Theme",
-    "system": "System",
-    "light": "Light",
-    "dark": "Dark"
+    "midwestPrincess": "Midwest Princess",
+    "pinkPonyClub": "Pink Pony Club",
+    "hotToGo": "HOT TO GO!",
+    "redWineSupernova": "Red Wine Supernova",
+    "goodLuckBabe": "Good Luck, Babe!",
+    "valentino": "Valentino"
   },
   "spinner": {
     "label": "Loading"

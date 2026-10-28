@@ -5,9 +5,12 @@ import { type Theme, supportedThemes } from '@/lib/theme'
 import { TranslationKeys } from '@/locales/translation-keys'
 
 const themeLabels = {
-  system: TranslationKeys.ThemeSwitcherSystem,
-  light: TranslationKeys.ThemeSwitcherLight,
-  dark: TranslationKeys.ThemeSwitcherDark,
+  'midwest-princess': TranslationKeys.ThemeSwitcherMidwestPrincess,
+  'pink-pony-club': TranslationKeys.ThemeSwitcherPinkPonyClub,
+  'hot-to-go': TranslationKeys.ThemeSwitcherHotToGo,
+  'red-wine-supernova': TranslationKeys.ThemeSwitcherRedWineSupernova,
+  'good-luck-babe': TranslationKeys.ThemeSwitcherGoodLuckBabe,
+  valentino: TranslationKeys.ThemeSwitcherValentino,
 } as const satisfies Record<Theme, string>
 
 export const ThemeSwitcher = () => {

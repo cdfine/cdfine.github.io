@@ -1,39 +1,108 @@
 @custom-variant dark (&:where([data-mode='dark'], [data-mode='dark'] *));
 
+/* Palettes from https://github.com/cdfine/chappellRoan */
 /* `:root` is the fallback if the saved theme no longer exists */
 :root,
-[data-theme='light'] {
-  --background: var(--color-white);
-  --foreground: var(--color-slate-950);
-  --card: var(--color-slate-50);
-  --card-foreground: var(--color-slate-950);
-  --muted: var(--color-slate-100);
-  --muted-foreground: var(--color-slate-500);
-  --accent: var(--color-slate-100);
-  --accent-foreground: var(--color-slate-900);
-  --primary: var(--color-sky-700);
-  --primary-foreground: var(--color-white);
-  --destructive: var(--color-red-600);
-  --border: var(--color-slate-200);
-  --input: var(--color-slate-200);
-  --ring: var(--color-sky-700);
+[data-theme='midwest-princess'] {
+  --background: #fbf5ef;
+  --foreground: #5e1207;
+  --card: #f3e9df;
+  --card-foreground: #5e1207;
+  --muted: #ecdfd1;
+  --muted-foreground: #035673;
+  --accent: #feba9e;
+  --accent-foreground: #5e1207;
+  --primary: #035673;
+  --primary-foreground: #ffffff;
+  --destructive: #b83a22;
+  --border: #decbb6;
+  --input: #decbb6;
+  --ring: #035673;
 }
 
-[data-theme='dark'] {
-  --background: var(--color-slate-950);
-  --foreground: var(--color-slate-100);
-  --card: var(--color-slate-900);
-  --card-foreground: var(--color-slate-100);
-  --muted: var(--color-slate-800);
-  --muted-foreground: var(--color-slate-400);
-  --accent: var(--color-slate-800);
-  --accent-foreground: var(--color-slate-100);
-  --primary: var(--color-sky-400);
-  --primary-foreground: var(--color-slate-950);
-  --destructive: var(--color-red-500);
-  --border: var(--color-slate-800);
-  --input: var(--color-slate-800);
-  --ring: var(--color-sky-400);
+[data-theme='pink-pony-club'] {
+  --background: #000200;
+  --foreground: #fbe4ee;
+  --card: #170a0e;
+  --card-foreground: #fbe4ee;
+  --muted: #2a141b;
+  --muted-foreground: #f0a6c5;
+  --accent: #2a141b;
+  --accent-foreground: #f0a6c5;
+  --primary: #df6d8c;
+  --primary-foreground: #000200;
+  --destructive: #e0603a;
+  --border: #3a1c26;
+  --input: #3a1c26;
+  --ring: #df6d8c;
+}
+
+[data-theme='hot-to-go'] {
+  --background: #fffbf3;
+  --foreground: #001539;
+  --card: #fdf0d8;
+  --card-foreground: #001539;
+  --muted: #fbe5be;
+  --muted-foreground: #6a45b0;
+  --accent: #fadda8;
+  --accent-foreground: #001539;
+  --primary: #0052e7;
+  --primary-foreground: #ffffff;
+  --destructive: #d10f1f;
+  --border: #f6cb82;
+  --input: #f6cb82;
+  --ring: #0052e7;
+}
+
+[data-theme='red-wine-supernova'] {
+  --background: #140302;
+  --foreground: #d7cfc4;
+  --card: #250605;
+  --card-foreground: #d7cfc4;
+  --muted: #330b09;
+  --muted-foreground: #af9343;
+  --accent: #0e2c24;
+  --accent-foreground: #d7cfc4;
+  --primary: #af9343;
+  --primary-foreground: #140302;
+  --destructive: #f0524a;
+  --border: #7c0100;
+  --input: #7c0100;
+  --ring: #af9343;
+}
+
+[data-theme='good-luck-babe'] {
+  --background: #f9f9fc;
+  --foreground: #0a2e1e;
+  --card: #eaf4fc;
+  --card-foreground: #0a2e1e;
+  --muted: #ddedf9;
+  --muted-foreground: #117244;
+  --accent: #ddfbdd;
+  --accent-foreground: #117244;
+  --primary: #a100cb;
+  --primary-foreground: #ffffff;
+  --destructive: #c81e1e;
+  --border: #c9e3f6;
+  --input: #c9e3f6;
+  --ring: #a100cb;
+}
+
+[data-theme='valentino'] {
+  --background: #0b0d0f;
+  --foreground: #f1e7fe;
+  --card: #16181c;
+  --card-foreground: #f1e7fe;
+  --muted: #24252c;
+  --muted-foreground: #a9a7b8;
+  --accent: #24252c;
+  --accent-foreground: #f1e7fe;
+  --primary: #e8677a;
+  --primary-foreground: #0b0d0f;
+  --destructive: #f0524a;
+  --border: #2e3037;
+  --input: #2e3037;
+  --ring: #e8677a;
 }
 
 [data-mode='light'] {

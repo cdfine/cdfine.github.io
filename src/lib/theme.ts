@@ -1,12 +1,8 @@
-import { defaultTheme, themeModes } from '@/config/themes'
+import { systemThemes, themeModes } from '@/config/themes'
 
-type NamedTheme = keyof typeof themeModes
-export type Theme = NamedTheme | 'system'
+export type Theme = keyof typeof themeModes
 
-export const supportedThemes: Theme[] = [
-  'system',
-  ...(Object.keys(themeModes) as NamedTheme[]),
-]
+export const supportedThemes = Object.keys(themeModes) as Theme[]
 
 // Must match the keys read by the inline script in index.html
 const themeStorageKey = 'theme'
@@ -18,12 +14,13 @@ const listeners = new Set<() => void>()
 const isTheme = (value: unknown): value is Theme =>
   supportedThemes.includes(value as Theme)
 
-const readStoredTheme = (): Theme => {
+// null until a theme is chosen, so the OS colour scheme decides
+const readStoredTheme = (): Theme | null => {
   try {
     const stored = localStorage.getItem(themeStorageKey)
-    return isTheme(stored) ? stored : defaultTheme
+    return isTheme(stored) ? stored : null
   } catch {
-    return defaultTheme
+    return null
   }
 }
 
@@ -35,29 +32,32 @@ const writeStorage = (key: string, value: string) => {
   }
 }
 
-let currentTheme = readStoredTheme()
+let storedTheme = readStoredTheme()
 
-// `system` resolves to plain light or dark
-const resolveTheme = (theme: Theme): NamedTheme =>
-  theme === 'system' ? (darkQuery.matches ? 'dark' : 'light') : theme
+const resolveTheme = (): Theme =>
+  storedTheme ?? systemThemes[darkQuery.matches ? 'dark' : 'light']
 
 // Sets the attributes theme.css keys its tokens and `dark:` variant off
 const applyTheme = () => {
-  const resolved = resolveTheme(currentTheme)
-  const mode = themeModes[resolved]
-  document.documentElement.dataset.theme = resolved
+  const theme = resolveTheme()
+  const mode = themeModes[theme]
+  document.documentElement.dataset.theme = theme
   document.documentElement.dataset.mode = mode
   // Lets index.html set the mode before React loads
   writeStorage(themeModeStorageKey, mode)
 }
 
-export const getTheme = () => currentTheme
-
-export const setTheme = (theme: Theme) => {
-  currentTheme = theme
-  writeStorage(themeStorageKey, theme)
+const update = () => {
   applyTheme()
   listeners.forEach((listener) => listener())
+}
+
+export const getTheme = resolveTheme
+
+export const setTheme = (theme: Theme) => {
+  storedTheme = theme
+  writeStorage(themeStorageKey, theme)
+  update()
 }
 
 export const subscribeToTheme = (listener: () => void) => {
@@ -67,6 +67,6 @@ export const subscribeToTheme = (listener: () => void) => {
   }
 }
 
-// Re-evaluate `system` when the OS setting changes
-darkQuery.addEventListener('change', applyTheme)
+// Follow the OS setting until a theme is chosen
+darkQuery.addEventListener('change', update)
 applyTheme()

@@ -8,15 +8,15 @@
     <script>
       try {
         const root = document.documentElement
-        const theme = localStorage.getItem('theme') ?? 'system'
-        if (theme === 'system') {
-          const mode = matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
-          root.dataset.theme = root.dataset.mode = mode
-        } else {
+        const theme = localStorage.getItem('theme')
+        if (theme) {
           root.dataset.theme = theme
           root.dataset.mode = localStorage.getItem('theme-mode') ?? 'light'
+        } else {
+          // Must match systemThemes in src/config/themes.ts
+          const isDark = matchMedia('(prefers-color-scheme: dark)').matches
+          root.dataset.theme = isDark ? 'pink-pony-club' : 'midwest-princess'
+          root.dataset.mode = isDark ? 'dark' : 'light'
         }
       } catch {}
     </script>

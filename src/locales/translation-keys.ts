@@ -16,9 +16,12 @@ export const TranslationKeys = {
   LanguageSwitcherEnGB: 'languageSwitcher.en-GB',
 
   ThemeSwitcherLabel: 'themeSwitcher.label',
-  ThemeSwitcherSystem: 'themeSwitcher.system',
-  ThemeSwitcherLight: 'themeSwitcher.light',
-  ThemeSwitcherDark: 'themeSwitcher.dark',
+  ThemeSwitcherMidwestPrincess: 'themeSwitcher.midwestPrincess',
+  ThemeSwitcherPinkPonyClub: 'themeSwitcher.pinkPonyClub',
+  ThemeSwitcherHotToGo: 'themeSwitcher.hotToGo',
+  ThemeSwitcherRedWineSupernova: 'themeSwitcher.redWineSupernova',
+  ThemeSwitcherGoodLuckBabe: 'themeSwitcher.goodLuckBabe',
+  ThemeSwitcherValentino: 'themeSwitcher.valentino',
 
   SpinnerLabel: 'spinner.label',
 
