@@ -58,4 +58,12 @@ export const TranslationKeys = {
   FooterCopyright: 'footer.copyright',
   FooterSocialLinksAriaLabel: 'footer.socialLinks.ariaLabel',
   FooterSocialLinksEmail: 'footer.socialLinks.email',
+  FooterSocialLinksBluesky: 'footer.socialLinks.bluesky',
+  FooterSocialLinksLinkedIn: 'footer.socialLinks.linkedIn',
+  FooterSocialLinksGoogleScholar: 'footer.socialLinks.googleScholar',
+  FooterSocialLinksSussex: 'footer.socialLinks.sussex',
+  FooterSocialLinksOrcid: 'footer.socialLinks.orcid',
+  FooterSocialLinksOsf: 'footer.socialLinks.osf',
+  FooterSocialLinksWebOfScience: 'footer.socialLinks.webOfScience',
+  FooterSocialLinksResearchGate: 'footer.socialLinks.researchGate',
 } as const satisfies Record<string, ParseKeys>

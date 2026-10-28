@@ -68,7 +68,15 @@
     "copyright": "© {{year}} {{appName}}. All rights reserved.",
     "socialLinks": {
       "ariaLabel": "Social links",
-      "email": "Email"
+      "email": "Email",
+      "bluesky": "Bluesky",
+      "linkedIn": "LinkedIn",
+      "googleScholar": "Google Scholar",
+      "sussex": "Sussex Profile",
+      "orcid": "ORCID",
+      "osf": "OSF Profile",
+      "webOfScience": "Web of Science",
+      "researchGate": "ResearchGate"
     }
   }
 }
